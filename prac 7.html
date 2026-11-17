@@ -1,0 +1,466 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METAVERSE | Explore the Virtual World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f0ff;
+            color: #25134d;
+        }
+
+        header {
+            background: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 4px solid #7848d8;
+        }
+
+        header img {
+            width: 180px;
+            max-width: 80%;
+            height: auto;
+        }
+
+        header h1 {
+            color: #381477;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #7848d8;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #381477;
+            text-align: center;
+            padding: 14px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #c5a8ff;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #25104f, #7848d8);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-top: 0;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #381477;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive Image Grid */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+        }
+
+        .gallery figure {
+            margin: 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #25104f25;
+            transition: transform 0.3s;
+        }
+
+        .gallery figure:hover {
+            transform: translateY(-6px);
+        }
+
+        .gallery img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        figcaption {
+            padding: 15px;
+            text-align: center;
+        }
+
+        figcaption h3 {
+            color: #7848d8;
+            margin: 0 0 8px;
+        }
+
+        figcaption p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* CSS Lightbox */
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            background: #000e;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 40px;
+            text-decoration: none;
+        }
+
+        /* Benefits */
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .benefit {
+            background: white;
+            padding: 22px;
+            text-align: center;
+            border-radius: 10px;
+            border-bottom: 4px solid #7848d8;
+            box-shadow: 0 3px 10px #0001;
+        }
+
+        .benefit h3 {
+            color: #7848d8;
+        }
+
+        footer {
+            background: #381477;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* Tablet */
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 26px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+
+            .gallery img {
+                height: 180px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 230px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .container {
+                padding: 20px 14px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header id="home">
+
+        <h1>METAVERSE</h1>
+
+        <p>EXPLORE THE VIRTUAL WORLD</p>
+
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Applications</a>
+        <a href="#benefits">Benefits</a>
+    </nav>
+
+    <section class="hero" id="about">
+
+        <h2>Welcome to the Future of Digital Reality</h2>
+
+        <p>
+            The Metaverse is a virtual world where people can
+            connect, communicate, work, learn and explore using
+            digital technologies. It combines Virtual Reality,
+            Augmented Reality and 3D environments to create
+            interactive digital experiences.
+        </p>
+
+    </section>
+
+    <main class="container" id="gallery">
+
+        <h2>Explore Metaverse Applications</h2>
+
+        <p class="intro">
+            Discover how the Metaverse is transforming education,
+            entertainment, healthcare, business and social
+            communication through immersive virtual experiences.
+        </p>
+
+        <section class="gallery">
+
+            <figure>
+                <a href="#image1">
+                    <img
+                    src="https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=700"
+                    alt="Virtual Reality Experience"
+                    loading="lazy">
+                </a>
+
+                <figcaption>
+                    <h3>Virtual Reality</h3>
+                    <p>Experience immersive digital environments using VR technology.</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href="#image2">
+                    <img
+                    src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=700"
+                    alt="Virtual Gaming"
+                    loading="lazy">
+                </a>
+
+                <figcaption>
+                    <h3>Virtual Gaming</h3>
+                    <p>Enjoy interactive gaming experiences in virtual worlds.</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href="#image3">
+                    <img
+                    src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=700"
+                    alt="Digital Technology"
+                    loading="lazy">
+                </a>
+
+                <figcaption>
+                    <h3>Digital Technology</h3>
+                    <p>Connect people through advanced digital platforms.</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href="#image4">
+                    <img
+                    src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=700"
+                    alt="Virtual Reality Headset"
+                    loading="lazy">
+                </a>
+
+                <figcaption>
+                    <h3>Augmented Reality</h3>
+                    <p>Combine real-world surroundings with digital objects.</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href="#image5">
+                    <img
+                    src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=700"
+                    alt="Digital Innovation"
+                    loading="lazy">
+                </a>
+
+                <figcaption>
+                    <h3>Virtual Education</h3>
+                    <p>Learn through interactive classrooms and 3D simulations.</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href="#image6">
+                    <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700"
+                    alt="Digital Communication"
+                    loading="lazy">
+                </a>
+
+                <figcaption>
+                    <h3>Virtual Communication</h3>
+                    <p>Meet and interact with people through digital avatars.</p>
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <section id="benefits">
+
+            <h2>Why Explore the Metaverse?</h2>
+
+            <div class="benefits">
+
+                <article class="benefit">
+                    <h3>Virtual Experience</h3>
+                    <p>Explore realistic and immersive digital environments.</p>
+                </article>
+
+                <article class="benefit">
+                    <h3>Global Connection</h3>
+                    <p>Connect and communicate with people worldwide.</p>
+                </article>
+
+                <article class="benefit">
+                    <h3>Digital Learning</h3>
+                    <p>Improve learning through interactive experiences.</p>
+                </article>
+
+                <article class="benefit">
+                    <h3>Innovation</h3>
+                    <p>Discover new opportunities using emerging technologies.</p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Image Previews -->
+
+    <div id="image1" class="lightbox">
+        <a href="#gallery" class="close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1617802690992-15d93263d3a9?w=1200"
+        alt="Virtual Reality">
+    </div>
+
+    <div id="image2" class="lightbox">
+        <a href="#gallery" class="close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=1200"
+        alt="Virtual Gaming">
+    </div>
+
+    <div id="image3" class="lightbox">
+        <a href="#gallery" class="close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200"
+        alt="Digital Technology">
+    </div>
+
+    <div id="image4" class="lightbox">
+        <a href="#gallery" class="close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=1200"
+        alt="Augmented Reality">
+    </div>
+
+    <div id="image5" class="lightbox">
+        <a href="#gallery" class="close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=1200"
+        alt="Virtual Education">
+    </div>
+
+    <div id="image6" class="lightbox">
+        <a href="#gallery" class="close">&times;</a>
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
+        alt="Virtual Communication">
+    </div>
+
+    <footer>
+
+        <p><strong>METAVERSE</strong></p>
+
+        <p>Explore the Virtual World</p>
+
+        <p>Imagine. Connect. Experience.</p>
+
+        <p>Made in Karunya</p>
+
+    </footer>
+
+</body>
+</html>
+```
